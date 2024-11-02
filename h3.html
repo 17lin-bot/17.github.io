@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>LYT</h1>
+        <nav>
+            <a href="h1.html">首頁</a>
+            <a href="h2.html">關於我</a>
+            <a href="h3.html">作品集</a>
+            <a href="h4.html">服務項目</a>
+            <a href="h5.html">聯絡我</a>
+        </nav>
+    </header>
+    <section class="photo-gallery">
+        <h2>Portfolio</h2>
+        <div class="grid-container">
+            <img src="images/4.jpg" alt="照片1" class="photo">
+            <img src="images/5.jpg" alt="照片2" class="photo">
+            <img src="images/6.jpg" alt="照片3" class="photo">
+            <img src="images/7.jpg" alt="照片4" class="photo">
+            <img src="images/8.jpg" alt="照片5" class="photo">
+            <img src="images/9.jpg" alt="照片6" class="photo">
+        </div>
+    
+        <!-- 模態框 -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img" alt="">
+            <div id="caption"></div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>2024LYT</p>
+    </footer>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Fascinate&display=swap" rel="stylesheet">
+
+</body>
+</html>
+
+<script>
+    // 獲取模態框元素
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-img");
+    var captionText = document.getElementById("caption");
+
+    // 獲取所有圖片
+    var photos = document.querySelectorAll('.photo');
+
+    // 為每張圖片添加點擊事件
+    photos.forEach(function(photo) {
+        photo.onclick = function() {
+            modal.style.display = "block"; // 顯示模態框
+            modalImg.src = this.src; // 設定模態框圖片來源
+            captionText.innerHTML = this.alt; // 設定描述
+        }
+    });
+
+    // 點擊關閉模態框
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none"; // 隱藏模態框
+    }
+
+    // 點擊模態框外部也可以關閉模態框
+    modal.onclick = function() {
+        modal.style.display = "none"; // 隱藏模態框
+    }
+</script>

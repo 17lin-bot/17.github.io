@@ -1,0 +1,101 @@
+/* style.css */
+body {
+    font-family: "Bodoni Moda", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header, section, footer {
+    text-align: center; /* 水平居中 */
+}
+
+.photo-gallery {
+    text-align: center; /* 水平居中 */
+}
+
+.grid-container {
+    display: grid; /* 啟用網格佈局 */
+    grid-template-columns: repeat(3, 1fr); /* 三列 */
+    gap: 10px; /* 每張圖片之間的間距 */
+    max-width: 800px; /* 最大寬度 */
+    margin: 0 auto; /* 左右邊距自動，居中 */
+}
+
+.grid-container img {
+    width: 100%; /* 使圖片寬度佔滿格子 */
+    height: auto; /* 高度自動，保持圖片比例 */
+    border-radius: 8px; /* 可選：圓角 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 可選：陰影 */
+}
+
+
+.modal {
+    display: none; /* 隱藏模態框 */
+    position: fixed; /* 固定在螢幕上 */
+    z-index: 1000; /* 高於其他元素 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 全螢幕 */
+    height: 100%; /* 全螢幕 */
+    overflow: auto; /* 滾動 */
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* 可以調整大小 */
+    max-width: 700px; /* 最大寬度 */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer; /* 指標改變 */
+}
